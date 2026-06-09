@@ -1,71 +1,90 @@
-# 🇧🇷 EstudarBR
-
-A mobile-first web app to discover postgraduate programs across Brazil.
-
-## 🚀 Deploy to Netlify (5 minutes)
-
-### Step 1 — Push to GitHub
-1. Create a new repo on [github.com](https://github.com)
-2. Upload all these files (drag & drop works on GitHub's web UI)
-3. Make sure the repo is created with a `main` branch
-
-### Step 2 — Connect Netlify
-1. Go to [netlify.com](https://netlify.com) and sign in with GitHub
-2. Click **Add new site → Import an existing project**
-3. Select **GitHub** and authorize access
-4. Pick your `estudarbr` repository
-
-### Step 3 — Build Settings (auto-detected, verify these)
-| Field | Value |
-|---|---|
-| Branch | `main` |
-| Build command | `npm run build` |
-| Publish directory | `dist` |
-
-4. Click **Deploy site** — done in ~90 seconds!
-
-### Step 4 — Customize Your URL
-Under **Site configuration → Domain management**, change the random URL to something like `estudarbr.netlify.app`.
-
----
-
-## 🛠 Local Development
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173)
-
----
-
-## 🤖 Automated Weekly Scraper
-
-The `.github/workflows/auto_scrape.yml` file runs the Python scraper every Sunday at midnight UTC. It:
-1. Fetches fresh links from university portals
-2. Updates `discovered_programs.json`
-3. Commits the changes → Netlify auto-rebuilds the site
-
-To trigger manually: Go to **GitHub → Actions → Weekly Brazil University Scraper → Run workflow**
-
----
-
-## 📁 Project Structure
-
-```
-├── .github/workflows/auto_scrape.yml   # Weekly automation
-├── public/_redirects                    # Netlify SPA routing
-├── src/
-│   ├── App.jsx                          # Main React component
-│   ├── main.jsx                         # React entry point
-│   └── index.css                        # Tailwind imports
-├── index.html
-├── netlify.toml                         # Netlify build config
-├── package.json
-├── scraper.py                           # Python scraper
-├── requirements.txt
-├── tailwind.config.js
-├── vite.config.js
-└── discovered_programs.json            # Auto-updated data
-```
+[
+  {
+    "id": 1,
+    "university": "UEA - Hematologia",
+    "program": "Mestrado em Hematologia – Edital 2026",
+    "region": "Norte",
+    "state": "AM",
+    "status": "Check Portal",
+    "deadline": "See Website",
+    "link": "https://posgraduacao.uea.edu.br/hematologia/",
+    "type": "State Public"
+  },
+  {
+    "id": 2,
+    "university": "UFPA - Educação",
+    "program": "PPGEDUC – Processo Seletivo de Mestrado",
+    "region": "Norte",
+    "state": "PA",
+    "status": "Check Portal",
+    "deadline": "See Website",
+    "link": "https://ppgeduc.propesp.ufpa.br/index.php/br/",
+    "type": "Federal Public"
+  },
+  {
+    "id": 3,
+    "university": "UESC - Produção Vegetal",
+    "program": "PPGPV – Produção Vegetal",
+    "region": "Nordeste",
+    "state": "BA",
+    "status": "Check Portal",
+    "deadline": "See Website",
+    "link": "https://ppgpv.uesc.br/pt/",
+    "type": "State Public"
+  },
+  {
+    "id": 4,
+    "university": "UECE - Enfermagem",
+    "program": "PPGEEN – Enfermagem",
+    "region": "Nordeste",
+    "state": "CE",
+    "status": "Check Portal",
+    "deadline": "See Website",
+    "link": "https://www.uece.br/ppgeen/",
+    "type": "State Public"
+  },
+  {
+    "id": 5,
+    "university": "UnB - Artes Visuais",
+    "program": "PPGAV – Artes Visuais",
+    "region": "Centro-Oeste",
+    "state": "DF",
+    "status": "Check Portal",
+    "deadline": "See Website",
+    "link": "https://www.ppgav.unb.br/",
+    "type": "Federal Public"
+  },
+  {
+    "id": 6,
+    "university": "Unicamp - Engenharia de Alimentos",
+    "program": "Mestrado em Engenharia de Alimentos",
+    "region": "Sudeste",
+    "state": "SP",
+    "status": "Check Portal",
+    "deadline": "See Website",
+    "link": "https://fea.unicamp.br/pos-graduacao/engenharia-de-alimentos/",
+    "type": "State Public"
+  },
+  {
+    "id": 7,
+    "university": "UFPR - Contabilidade",
+    "program": "PPGCONTABILIDADE – Contabilidade",
+    "region": "Sul",
+    "state": "PR",
+    "status": "Check Portal",
+    "deadline": "See Website",
+    "link": "http://www.prppg.ufpr.br/site/ppgcontabilidade/",
+    "type": "Federal Public"
+  },
+  {
+    "id": 8,
+    "university": "UFRGS - Informática",
+    "program": "PPGCIN – Ciência da Informação",
+    "region": "Sul",
+    "state": "RS",
+    "status": "Check Portal",
+    "deadline": "See Website",
+    "link": "https://www.ufrgs.br/ppgcin/",
+    "type": "Federal Public"
+  }
+]

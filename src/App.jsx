@@ -1,59 +1,8 @@
 import React, { useState } from 'react';
 import { Sun, Moon, Search, MapPin, ExternalLink, GraduationCap, Calendar, AlertCircle } from 'lucide-react';
 
-// Upgraded mock data modeling the exact output of your new Python scraper engine
-const initialPrograms = [
-  {
-    id: 1,
-    university: "UEA (Univ. do Estado do Amazonas)",
-    program: "Mestrado em Hematologia - Edital 2026",
-    region: "Norte",
-    state: "AM",
-    status: "Open",
-    deadline: "30/06/2026",
-    link: "https://posgraduacao.uea.edu.br/hematologia/"
-  },
-  {
-    id: 2,
-    university: "UFPA (Univ. Federal do Pará)",
-    program: "PPGEDUC - Processo Seletivo de Mestrado",
-    region: "Norte",
-    state: "PA",
-    status: "Check Portal",
-    deadline: "See Website",
-    link: "https://ppgeduc.propesp.ufpa.br/index.php/br/"
-  },
-  {
-    id: 3,
-    university: "UFC (Univ. Federal do Ceará)",
-    program: "PPGBIOQUIMICA - Regular Intake",
-    region: "Nordeste",
-    state: "CE",
-    status: "Closed",
-    deadline: "15/02/2026",
-    link: "http://ppgbioquimica.ufc.br"
-  },
-  {
-    id: 4,
-    university: "Unicamp (Univ. Estadual de Campinas)",
-    program: "Engenharia de Alimentos - Doutorado",
-    region: "Sudeste",
-    state: "SP",
-    status: "Open",
-    deadline: "12 de Agosto",
-    link: "https://fea.unicamp.br/pos-graduacao/engenharia-de-alimentos/"
-  },
-  {
-    id: 5,
-    university: "UFPR (Univ. Federal do Paraná)",
-    program: "PPGCONTABILIDADE - Admissão Direta",
-    region: "Sul",
-    state: "PR",
-    status: "Closed",
-    deadline: "01/04/2026",
-    link: "http://www.prppg.ufpr.br/site/ppgcontabilidade/"
-  }
-];
+// Connect the live scraper JSON output data channel directly to the template matrix
+import initialPrograms from '../discovered_programs.json';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -71,7 +20,6 @@ export default function App() {
     return matchesSearch && matchesRegion;
   });
 
-  // Helper function to dynamically generate Tailwind classes based on admission status
   const getStatusStyles = (status) => {
     switch (status) {
       case 'Open':
